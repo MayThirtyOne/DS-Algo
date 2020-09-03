@@ -4,6 +4,8 @@
 
 using namespace std; 
 
+//This was a bit tricky and useless at the same time. We could do this iteratively and save
+//a lot of time.
 
 
 
@@ -11,9 +13,22 @@ using namespace std;
 int lindex(int* a, int size, int k){
 	if(size==0)
 		return -1;
-	if(a[size]==k)
-		return size;
-	return lindex(a,size-1,k);
+	int small_calc=lindex(a+1,size-1,k);
+	if(small_calc==-1){
+		if(a[0]==k)
+			return 0;
+		else
+			return -1;
+
+	
+	}
+
+	return small_calc+1;
+
+
+
+
+	
 	
 	
 	
@@ -27,7 +42,7 @@ void solve()
 	cin>>size;
 	int arr[size];
 	for(int i=0;i<size;i++) cin>>arr[i];
-	int k=2;
+	int k=8;
 
 	cout<<lindex(arr,size,k);
 
