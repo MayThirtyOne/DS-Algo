@@ -39,6 +39,7 @@ void solve()
 	int k=4;
 
 	cout<<findex(arr,size,k);
+	cout<<findex(arr,size,k+1);
 
 
 
