@@ -38,7 +38,7 @@ void solve()
 	for(int i=0;i<size;i++) cin>>arr[i];
 	int k=4;
 
-	cout<<findex(arr,size,k);
+	cout<<findex(arr,size,k-1);
 	cout<<findex(arr,size,k+1);
 
 
