@@ -1,75 +1,28 @@
- 
 #include <bits/stdc++.h>
-#define ll long long int
 
-using namespace std; 
+using namespace std;
+#define ll long long
+#define pb push_back
+map <ll,ll> hm;
+ll mod = 1e9+7;
 
-//This was a bit tricky and useless at the same time. We could do this iteratively and save
-//a lot of time.
+int rec(int* arr,int n,int i,int key)
+{
+    if(i==n)
+    {
+        return -1;
+    }
+    if(arr[i]==key)
+    {
+        return i;
+    }
 
-
-
-
-int lindex(int* a, int size, int k){
-	if(size==0)
-		return -1;
-	int small_calc=lindex(a+1,size-1,k);
-	if(small_calc==-1){
-		if(a[0]==k)
-			return 0;
-		else
-			return -1;
-
-	
-	}
-
-	return small_calc+1;
-
-
-
-
-	
-	
-	
-	
-
-	
+    else return rec(arr,n,i+1,key);
 }
 
-void solve() 
-{ 
-	int size;
-	cin>>size;
-	int arr[size];
-	for(int i=0;i<size;i++) cin>>arr[i];
-	int k=8;
-
-	cout<<lindex(arr,size,k);
-
-
-
-} 
-
-
-
-int main() 
-{ 
-    ios_base::sync_with_stdio(false); 
-    cin.tie(NULL); 
-  
-#ifndef ONLINE_JUDGE     
-freopen("error.txt", "w", stderr); 
-#endif 
-  
-    int t = 1; 
-    /*is Single Test case?*/ cin >> t; 
-    while (t--) { 
-        solve(); 
-         
-    } 
-  
-    cerr << "Total Time Taken : " << (float)clock() / CLOCKS_PER_SEC << " Seconds!" << endl; 
-    return 0; 
-} 
-
- 
+int main() {
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
+    int arr[5]={1,1,2,2,5};
+    cout<<rec(arr,5,0,2);
+}
