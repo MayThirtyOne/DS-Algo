@@ -30,7 +30,7 @@ TreeNode<int>* takeIPLevelWise(){
 		int tchild;
 		cout<<"How Many Children Of"<<front->data<<"?"<<endl;
 		cin>>tchild;
-		while(tchild){
+		while(tchild--){
 			int newdata;
 			cout<<"Enter Children"<<endl;
 			cin>>newdata;

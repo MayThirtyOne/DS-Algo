@@ -57,40 +57,23 @@ void printTree(TreeNode<int> *root){
 
 }
 
-void printTreeLevelWise(TreeNode<int> *root){
-	queue<TreeNode<int>*> pendingNodes;
-	pendingNodes.push(root);
-	while(pendingNodes.size()!=0){
-		TreeNode<int> *temp= pendingNodes.front();
-		pendingNodes.pop();
-		cout<<temp->data<<": ";
-		for(int i=0;i<temp->children.size();i++){
-			cout<<temp->children[i]->data<<",";
-			pendingNodes.push(temp->children[i]);
-		}
-		cout<<endl;
-	}
-}
-void printKLevel(TreeNode<int> *root, int k){
-	if(k==0){
+void printLeaves(TreeNode<int> *root){
+	if(root->children.size()==0){
 		cout<<root->data<<" ";
 	}
 	else{
-		for(int i=0;i<root->children.size();i++){
-			printKLevel(root->children[i], k-1);
+		for(int i =0 ;i< root->children.size();i++){
+			printLeaves(root->children[i]);
 		}
-
-		cout<<endl;
 	}
 }
 
 void solve() 
 { 
 	TreeNode<int> *root = takeIPLevelWise();
-	printTreeLevelWise(root);
-	printKLevel(root, 0);
-	printKLevel(root, 1);
-	printKLevel(root, 2);
+	printTree(root);
+	printLeaves(root);
+
 
 
 
