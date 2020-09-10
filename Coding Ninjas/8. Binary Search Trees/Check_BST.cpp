@@ -147,6 +147,7 @@ void solve()
 	if(found) cout<<"YES, FOUND: "<<found->data<<endl;
 	else cout<<"NOT FOUND"<<endl;
 	printInrange(root, 2,4);
+	printInrange(root, 2,5);
 	cout<<"BINARY TREE? "<<checkBST(root)<<endl;
 
 
