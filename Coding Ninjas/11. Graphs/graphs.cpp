@@ -29,6 +29,17 @@ void bfs(int start){
 
 }
 
+void dfs(int start){
+	cout<<start<<" ";
+	visited[start]=1;
+	for(int i = 0 ; i< graph[start].size();i++){
+		int child = graph[start][i];
+		if(visited[child]==0){
+			dfs(child);
+		}
+	}
+	return;
+}
 
 
 void solve() 
