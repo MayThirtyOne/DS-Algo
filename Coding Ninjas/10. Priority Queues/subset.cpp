@@ -5,10 +5,21 @@
 using namespace std; 
 
 
+string pp(string s){
+	if(s.length()==0) return;
+
+	string temp1 = s[0] + pp(s.substr(1));
+	string temp2 = pp(s.substr(1)) + s[0];
+	cout<<temp1;
+	cout<<temp2;
+}
+
 
 void solve() 
 { 
 
+string s= "abc";
+pp(s);
 
 
 } 
