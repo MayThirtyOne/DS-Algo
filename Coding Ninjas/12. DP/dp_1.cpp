@@ -7,7 +7,7 @@ using namespace std;
 
 int minsteps(int n, int *arr){
 	if(n==1) {
-		arr[n]=0
+		arr[n]=0;
 		return 0;
 
 	}
