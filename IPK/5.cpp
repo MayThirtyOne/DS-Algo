@@ -13,18 +13,19 @@ void checkMagazine(vector<string> magazine, vector<string> note) {
     for(int i=0;i<magazine.size();i++){
 
         if(mp.count(magazine[i])==0) mp[magazine[i]]=1;
-        else mp[magazine[i]]+=1;
+        
     }
 
     for(int i=0;i<note.size();i++){
 
         if(mp1.count(note[i])==0) mp1[note[i]]=1;
-        else mp1[note[i]]+=1;
+        
     }
 
     for(int i=0;i<note.size();i++){
         if(mp1[note[i]]!=mp[note[i]]){
             flag=0;
+            break;
         }
     }
 if(flag) cout<<"Yes"<<endl;
