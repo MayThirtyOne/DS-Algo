@@ -1,65 +1,50 @@
-#include <bits/stdc++.h>
-#include<cstring>
+// C++ program for implementation of Bubble sort 
+#include <bits/stdc++.h> 
+using namespace std; 
 
-using namespace std;
+void swap(int *xp, int *yp) 
+{ 
+    int temp = *xp; 
+    *xp = *yp; 
+    *yp = temp; 
+} 
 
-// Complete the twoStrings function below.
-string twoStrings(string s1, string s2) {
-
-    vector<char> v1;
-    vector<char> v2;
-    unordered_map<char,int> m1;
-    unordered_map<char,int> m2;
-    string fres="NO";
-    for(int i=0;i<s1.length();i++){
-        if(m1.count(s1[i])==0){
-            m1[s1[i]]=1;
-            v1.push_back(s1[i]);
+// A function to implement bubble sort 
+int bubbleSort(int arr[], int n) 
+{ 
+    int count=0;
+    int i, j; 
+    for (i = 0; i < n-1; i++)    
+    
+    // Last i elements are already in place 
+    for (j = 0; j < n-i-1; j++) 
+        if (arr[j] > arr[j+1]) {
+            swap(&arr[j], &arr[j+1]); 
+            count+=1;
         }
 
-    }
-    for(int i=0;i<s2.length();i++){
-        if(m2.count(s2[i])==0){
-            m2[s2[i]]=1;
-            v2.push_back(s2[i]);
-        }
+        return count;
+} 
 
-    }
+/* Function to print an array */
+void printArray(int arr[], int size) 
+{ 
+    int i; 
+    for (i = 0; i < size; i++) 
+        cout << arr[i] << " "; 
+    cout << endl; 
+} 
 
-    for(int i=0;i<v1.size();i++){
-        for(int j=0;j<v2.size();j++){
-            if(v1[i]==v2[j]){
-                fres="YES";
-                return fres;
-            }
-        }
-    }
+// Driver code 
+int main() 
+{ 
+    int arr[] = {8,22,7,9,31,19,5,13}; 
+    int n = sizeof(arr)/sizeof(arr[0]); 
+    int pp = bubbleSort(arr, n); 
+    cout<<pp<<endl;
+    cout<<"Sorted array: \n"; 
+    printArray(arr, n); 
+    return 0; 
+} 
 
-    return fres;
-
-}
-
-int main()
-{
-    ofstream fout(getenv("OUTPUT_PATH"));
-
-    int q;
-    cin >> q;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-    for (int q_itr = 0; q_itr < q; q_itr++) {
-        string s1;
-        getline(cin, s1);
-
-        string s2;
-        getline(cin, s2);
-
-        string result = twoStrings(s1, s2);
-
-        fout << result << "\n";
-    }
-
-    fout.close();
-
-    return 0;
-}
+// This code is contributed by rathbhupendra 
