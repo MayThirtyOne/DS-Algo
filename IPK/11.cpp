@@ -1,56 +1,40 @@
+ 
 #include <bits/stdc++.h>
+#define ll long long int
 
-using namespace std;
+using namespace std; 
 
-class Node {
-    public:
-        int data;
-        Node *left;
-        Node *right;
-        Node(int d) {
-            data = d;
-            left = NULL;
-            right = NULL;
-        }
-};
 
-class Solution {
-    public:
-        Node* insert(Node* root, int data) {
-            if(root == NULL) {
-                return new Node(data);
-            } else {
-                Node* cur;
-                if(data <= root->data) {
-                    cur = insert(root->left, data);
-                    root->left = cur;
-                } else {
-                    cur = insert(root->right, data);
-                    root->right = cur;
-               }
 
-               return root;
-           }
-        }
-/*The tree node has data, left child and right child 
-class Node {
-    int data;
-    Node* left;
-    Node* right;
-};
+void solve() 
+{ 
 
-*/
-    int height(Node* root) {
-        // Write your code here.
+    string line;
+    getline(cin,line);
+    
 
-        if(root==NULL){
-            return -1;
-        }
+} 
 
-        int lh=height(root->left);
-        int rh=height(root->right);
 
-        return 1 + max(lh,rh);
-    }
 
-}; //End of Solution
+int main() 
+{ 
+    ios_base::sync_with_stdio(false); 
+    cin.tie(NULL); 
+  
+#ifndef ONLINE_JUDGE     
+freopen("error.txt", "w", stderr); 
+#endif 
+  
+    int t = 1; 
+    
+    while (t--) { 
+        solve(); 
+         
+    } 
+  
+    cerr << "Total Time Taken : " << (float)clock() / CLOCKS_PER_SEC << " Seconds!" << endl; 
+    return 0; 
+} 
+
+ 
