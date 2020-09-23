@@ -6,17 +6,17 @@ using namespace std;
 
 
 
-void solve() 
-{ 
-    char str1[100000+10];
-    char str2[100000+10];
-    cin>>str1>>str2;
+void solve(){
 
-    cout<<str1+2<<str2<<endl;
-
-
-
-
+	string s;
+	cin>>s;
+	unordered_set<char> st;
+	for(int i=0;i<s.length();i++){
+		st.insert(s[i]);
+	}
+	//cout<<st.size()<<endl;
+	if(st.size()%2!=0) cout<<"IGNORE HIM!"<<endl;
+	else cout<<"CHAT WITH HER!"<<endl;
 } 
 
 

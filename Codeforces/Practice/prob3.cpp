@@ -8,12 +8,16 @@ using namespace std;
 
 void solve() 
 { 
-    char str1[100000+10];
-    char str2[100000+10];
-    cin>>str1>>str2;
+    int n;
+    int cnt=0;
+    cin>>n;
+    while(n--){
+    int a,b,c;
+    cin>>a>>b>>c;
+    if(a+b+c>=2) cnt+=1;
+    }
 
-    cout<<str1+2<<str2<<endl;
-
+    cout<<cnt<<endl;
 
 
 
@@ -30,7 +34,8 @@ int main()
 freopen("error.txt", "w", stderr); 
 #endif 
   
-    int t = 1; 
+
+    int t=1;
     while (t--) { 
         solve(); 
          

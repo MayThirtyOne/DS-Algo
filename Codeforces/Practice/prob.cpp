@@ -8,12 +8,19 @@ using namespace std;
 
 void solve() 
 { 
-    char str1[100000+10];
-    char str2[100000+10];
-    cin>>str1>>str2;
+    string s;
+    cin>>s;
+    int cnt=0;
+    for(int i=0;i<s.length();i++){
+        if(s[i]=='a') cnt+=1;
+    }
 
-    cout<<str1+2<<str2<<endl;
-
+    if(cnt>s.length()/2){
+        cout<<s.length()<<endl;
+    }
+    else{
+        cout<<cnt*2-1<<endl;
+    }
 
 
 

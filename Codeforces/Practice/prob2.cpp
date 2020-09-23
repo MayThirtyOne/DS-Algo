@@ -8,14 +8,14 @@ using namespace std;
 
 void solve() 
 { 
-    char str1[100000+10];
-    char str2[100000+10];
-    cin>>str1>>str2;
-
-    cout<<str1+2<<str2<<endl;
-
-
-
+    int a,b,c,d;
+    cin>>a>>b>>c>>d;
+    unordered_set<int> s;
+    s.insert(a);
+    s.insert(b);
+    s.insert(c);
+    s.insert(d);
+    cout<<4-s.size()<<endl;
 
 } 
 
@@ -31,6 +31,7 @@ freopen("error.txt", "w", stderr);
 #endif 
   
     int t = 1; 
+    
     while (t--) { 
         solve(); 
          
