@@ -5,20 +5,41 @@
 using namespace std; 
 
 
+//did a similar problem in the past. Easy implementation.
+
 
 void solve() 
 { 
-	int n;
-	cin>>n;
-	if(n%2!=0){
-		cout<<"-1"<<endl;
-		return;
-	}
-	for(int i=2;i<=n;i=i+2){
-		cout<<i<<" "<<i-1<<" ";
-	}
-	cout<<endl;
+	int n,m;
+	cin>>n>>m;
+	char c;
+	vector<int> x;
+	vector<int> y;
+	for(int i=1;i<=n;i++){
+		for(int j=1;j<=m;j++){
+			cin>>c;
+			if(c=='*'){
+				x.push_back(i);
+				y.push_back(j);
+			}
+			
 
+		}
+	}
+
+	int xres=0;
+	int yres=0;
+	for(int i=0;i<x.size();i++){
+		xres^=x[i];
+
+	}
+
+	for(int i=0;i<y.size();i++){
+		yres^=y[i];
+
+	}
+
+	cout<<xres<<" "<<yres<<endl;
 
 
 } 
@@ -35,7 +56,6 @@ freopen("error.txt", "w", stderr);
 #endif 
   
     int t = 1; 
-
     while (t--) { 
         solve(); 
          

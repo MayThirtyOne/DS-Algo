@@ -5,21 +5,24 @@
 using namespace std; 
 
 
+//bruteforce approach
 
 void solve() 
 { 
-	int n;
-	cin>>n;
-	if(n%2!=0){
-		cout<<"-1"<<endl;
-		return;
-	}
-	for(int i=2;i<=n;i=i+2){
-		cout<<i<<" "<<i-1<<" ";
-	}
-	cout<<endl;
 
+int n,m;
+cin>>n>>m;
+int cnt=0;
+for(int i=0;i<1000;i++){
+	for(int j=0;j<1000;j++){
+		int nval= pow(i,2)+j;
+		int mval=i+ pow(j,2);
 
+		if(nval==n && mval ==m) cnt+=1;
+	}
+}
+
+cout<<cnt<<endl;
 
 } 
 
