@@ -5,25 +5,32 @@
 using namespace std; 
 
 
+int variantsCount(int n,int s0,int k,int b,int m,  a)
+{
+    ll ans = 0;
+    vector<int> arr(n);
+    arr[0]=s0;
+    for(int i = 1;i<n;i++)
+    {
+        arr[i]=((k*arr[i-1]+b)%m)+1+arr[i-1];
+    }
+    sort(arr.begin(),arr.end());
+    for(int i = 0;i<n;i++)
+    {
+        
+        int z = a/arr[i];
+        auto it = upper_bound(arr.begin(),arr.end(),z);
+        ans+=it-arr.begin();
+     //   cout<<arr[i]<<" "<<z<<" "<<it-arr.begin()<<endl;
+    }
+    return ans;
+}
 
 void solve() 
 { 
-	int n;
-	cin>>n;
-	vector<int> v;
-	while(n){
-		v.push_back(n%2);
-		n/=2;
-	}
-	int pp=4;
-	
-	while(pp--){
-		v.push_back(0);
-	}
-	reverse(v.begin(), v.end());
-	for(int i=0;i<v.size();i++){
-		cout<<v[i]<<" ";
-	}
+
+	cout<<variantsCount(53144100,30854518,932125114,616256181,18,5690240867915603);
+
 
 
 
