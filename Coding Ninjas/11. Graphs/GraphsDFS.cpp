@@ -3,14 +3,35 @@
 #define ll long long int
 
 using namespace std; 
+vector<int> G[10000+5];
+int vis[10000+5]={0};
 
-
-
+void dfs(int v){
+	vis[v]=1;
+	cout<<v<<endl;
+	for(int child : G[v]){
+		if(vis[child]==0){
+			dfs(child);
+		}
+	}
+}
 void solve() 
 { 
-	int n,x;
-	cin>>n>>x;
-	cout<<((n-2)/x)+1+1<<endl;
+	int n;
+	cin>>n;
+	int m;
+	cin>>m;
+	
+	for(int i=0;i<=n;i++) vis[i]=0;
+	while(m--){
+		int u,v;
+		cin>>u>>v;
+		G[u].push_back(v);
+		G[v].push_back(u);
+	}
+	dfs(1);
+
+
 
 
 
