@@ -120,6 +120,13 @@ def findXor(arr,n):
     return xoR * 2
 
 
+def FindSumOfLargestAndSmallestElement(arr,k):
+	arr.sort()
+	num1 = arr[k-1]
+	arr.sort(reverse = True)
+	num2 = arr[k-1]
+	return num1+num2
+
 
 def solve():
     n = int(input())
@@ -130,7 +137,12 @@ def solve():
 
     
 
-
+def FindSumOfLargestAndSmallestElement(arr,k):
+	arr.sort()
+	smallest = arr[k-1]
+	arr.sort(reverse = True)
+	largest = arr[k-1]
+	return smallest+largest
 
 
 def main():

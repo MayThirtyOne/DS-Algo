@@ -1,21 +1,42 @@
-#include <iostream>
-using namespace std;
+ 
+#include <bits/stdc++.h>
+#define ll long long int
 
-int main() {
-	// your code goes here
-		long long int t;
-	cin>>t;
-	while(t--)
-	{
-	    long long int n;
-	    cin>>n;
-	    long long int sum=0;
-	    for(long long int i=0;i<n;i++)
-	    {
-	        sum=sum^(n-i);
-	    }
-	 
-	 cout<<sum*2<<endl;   
-	}
-	return 0;
-}
+using namespace std; 
+
+
+
+void solve() 
+{ 
+
+int a,b;
+cin>>a>>b;
+if(a==b) cout<<pow(2*a,2);
+
+if(max(a,b)>2*min(a,b))
+
+} 
+
+
+
+int main() 
+{ 
+    ios_base::sync_with_stdio(false); 
+    cin.tie(NULL); 
+  
+#ifndef ONLINE_JUDGE     
+freopen("error.txt", "w", stderr); 
+#endif 
+  
+    int t = 1; 
+    /*is Single Test case?*/ cin >> t; 
+    while (t--) { 
+        solve(); 
+         
+    } 
+  
+    cerr << "Total Time Taken : " << (float)clock() / CLOCKS_PER_SEC << " Seconds!" << endl; 
+    return 0; 
+} 
+
+ 
