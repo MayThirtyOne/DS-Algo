@@ -1,39 +1,54 @@
-#include<bits/stdc++.h>
-#define ll long long 
+ 
+#include <bits/stdc++.h>
+using namespace std; 
 
-using namespace std;
-int main()
-{
 
-  int t;
-  cin>>t;
-  while(t-->0)
-  {
-    int n;
-    cin>>n;
-    int a[n][n];
-    for(int i=0;i<n;i++)
-    {
-      for(int j=0;j<n;j++)
-      {
-        if(j==i|| i+j==n-1)
-          a[i][j]=1;
-        else 
-          a[i][j]=0;
-      }
-    }
-    if(n%2!=0 && n>2)
-    {
-      int temp=n/2;
-      a[temp][temp+1]=1;
-      a[temp+1][temp]=1;
-    }
-    for(int i=0;i<n;i++)
-    {
-      for(int j=0;j<n;j++)
-        cout<<a[i][j]<<" ";
-      cout<<"\n";
-    }
-  }
-  return 0;
+
+void out(int i){
+	if(i==1) cout<<"Malasiya"<<endl;
+	else if(i==2) cout<<"Australia"<<endl;
+	else if(i==3) cout<<"Germany"<<endl;
+	else if(i==4) cout<<"Dubai"<<endl;
+	else cout<<"France"<<endl;
 }
+
+
+int main() 
+{ 
+	int vote[6]={0};
+
+	int c;
+	while(!cin.eof()){
+		cin>>c;
+		int num = c;
+
+		if(num<1 || num>5){
+			cout<<"INVALID INPUT"<<endl;
+			return 0;
+		}
+
+		else
+
+		vote[num]+=1;
+	}
+
+
+	int largest = -1;
+	for(int i=1;i<=5;i++){
+		if(vote[i]>largest){
+			largest=vote[i];
+		}
+	}
+
+	for(int i=1;i<=5;i++){
+		
+		if(vote[i]==largest){ out(i);
+		}
+	}
+
+
+     
+    return 0; 
+} 
+
+ 
