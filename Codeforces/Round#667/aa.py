@@ -112,10 +112,7 @@ localInput()
 
 
 def solve():
-   str1="hello"
-   str2=str1[:2]
-   print(str2)
-    
+    print("Good Luck!")
     
 
 
